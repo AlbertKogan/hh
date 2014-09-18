@@ -3,6 +3,7 @@ import functools
 
 
 class memoized(object):
+    # https://wiki.python.org/moin/PythonDecoratorLibrary#Memoize
     '''Decorator. Caches a function's return value each time it is called.
     If called later with the same arguments, the cached value is returned
     (not reevaluated).
