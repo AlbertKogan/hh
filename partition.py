@@ -43,7 +43,7 @@ def partition(num, summands):
         return 0
     return partition(num-1, summands-1) + partition(num-summands, summands)
 
-n = int(raw_input(u'Enter n: '))
-k = int(raw_input(u'Enter k: '))
+n = int(raw_input(u'Enter number (n): '))
+k = int(raw_input(u'Enter number of summands (k): '))
 
 print partition(n, k)
