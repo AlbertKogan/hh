@@ -2,7 +2,8 @@ import collections
 import functools
 
 
-class memoized(object):
+class Memoized(object):
+
     # https://wiki.python.org/moin/PythonDecoratorLibrary#Memoize
     '''Decorator. Caches a function's return value each time it is called.
     If called later with the same arguments, the cached value is returned
@@ -33,7 +34,7 @@ class memoized(object):
         return functools.partial(self.__call__, obj)
 
 
-@memoized
+@Memoized
 def partition(num, summands):
     if num == summands:
         return 1
@@ -41,9 +42,11 @@ def partition(num, summands):
         return 1
     if summands > num:
         return 0
-    return partition(num-1, summands-1) + partition(num-summands, summands)
+    return partition(num - 1, summands - 1) + partition(num-summands, summands)
 
-n = int(raw_input(u'Enter number (n): '))
-k = int(raw_input(u'Enter number of summands (k): '))
 
-print partition(n, k)
+if __name__ == '__main__':
+    n = int(raw_input(u'Enter number (n): '))
+    k = int(raw_input(u'Enter number of summands (k): '))
+
+    print partition(n, k)
