@@ -9,6 +9,7 @@ class Container(object):
         self.size = size
         self.current = current
 
+    # calculate free space in container
     @property
     def free(self):
         return self.size - self.current

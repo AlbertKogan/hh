@@ -42,7 +42,8 @@ def partition(num, summands):
         return 1
     if summands > num:
         return 0
-    return partition(num - 1, summands - 1) + partition(num-summands, summands)
+    return (partition(num - 1, summands - 1) +
+            partition(num - summands, summands))
 
 
 if __name__ == '__main__':
